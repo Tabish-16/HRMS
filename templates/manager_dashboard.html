@@ -1,0 +1,63 @@
+<div class="flex flex-col items-end ">
+    <!-- Nome -->
+    {% if users %}
+    {% for user in users %}
+    {% if user.is_manager %}
+    <div class="text-md font-medium ">{{user.full_name}}</div>
+    
+    <!-- Título -->
+    <div class="text-sm font-regular">{{user.designation}}</div>
+  </div>
+  
+  <!-- Foto -->
+  <div class="h-10 w-10 rounded-full cursor-pointer bg-gray-200 border-2 border-blue-400">
+    <img class="h-10 w-10 rounded-full" src="{{user.image.url}}" alt="">
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+</header>
+
+<!-- Main -->
+<main class="max-w-full h-full flex relative overflow-y-hidden">
+<!-- Container -->
+<div class="h-full w-full m-4 flex flex-wrap items-start justify-start rounded-tl grid-flow-col auto-cols-max gap-4 overflow-y-scroll">
+  <!-- Container -->
+  {% for user in users %}
+  <!-- <div class="cards w-96 h-60  flex-shrink-0 flex-grow flex items-center bg-gray-100" style="background: url('{{user.image.url}}');background-repeat: no-repeat;background-size: cover;">
+    <div class="overlay" style="background: rgba(10,10,10,0.5);
+    width: 100%;
+    height: 100%;
+    backdrop-filter:blur(1.5px);
+    position: relative;"></div>
+    <style>
+        .cards{
+            overflow: hidden;
+            border-radius: 1rem !important;
+            transition: 0.5s ease-in-out;
+            cursor: pointer;
+        }
+        .cards:hover{
+            box-shadow: 0px 3px 8px -3px;
+        }
+    </style>
+    <div class="info" style="    position: absolute;
+    padding: 10px;
+    display: inline-flex;
+    flex-flow: wrap;
+    align-self: center;
+    align-items: center;
+">
+        <div class="p-2">
+            <img class="w-32 h-48 rounded-2xl" style="    width: 100% !important;
+            height: 215px;" src="{{user.image.url}}" alt="">
+        </div>
+        <div class="text-center" style="color:#fff">
+            <h2 class="" style="font-size: 30px !important;font-family: sans-serif !important;">{{user.full_name}}</h2>
+            <h2>{{user.department}}</h2>
+            <h2>{{user.designation}}</h2>
+            <h2>{{user.date_of_birth}}</h2>
+        </div>
+    </div>
+    
+  </div> -->
